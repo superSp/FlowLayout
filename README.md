@@ -1,6 +1,17 @@
-最近一直在学习自定义View和自定义ViewGroup的东西，今天没事干就研究了一下FlowLayout，记录下实现步骤，参考自[鸿洋博客]( http://blog.csdn.net/lmj623565791/article/details/38352503/ )
+最近一直在学习自定义View和自定义ViewGroup的东西，今天没事干就研究了一下FlowLayout，记录下实现步骤
+参考自[鸿洋博客]( http://blog.csdn.net/lmj623565791/article/details/38352503/ )
 
 还有[我的简书地址](http://www.jianshu.com/p/0d6e6f2a98a9)
+
+#AndroidStudio使用
+在根projcet的build.gradle中添加.
+
+`maven { url 'https://jitpack.io' }`
+
+在项目的build.gradle添加:
+
+` compile 'com.github.superSp:FlowLayout:1.0'`
+
 ####效果图
 
 自适应
