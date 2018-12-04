@@ -3,7 +3,7 @@
 
 还有[我的简书地址](http://www.jianshu.com/p/0d6e6f2a98a9)
 
-#AndroidStudio使用
+# AndroidStudio使用
 在根projcet的build.gradle中添加.
 
 `maven { url 'https://jitpack.io' }`
@@ -12,7 +12,7 @@
 
 ` compile 'com.github.superSp:FlowLayout:1.0'`
 
-####效果图
+#### 效果图
 
 自适应
 
@@ -22,7 +22,7 @@
 
 ![图片.png](http://upload-images.jianshu.io/upload_images/1168278-2732872566476fee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-####使用方法——静态添加
+#### 使用方法——静态添加
 ```
 <lsp.com.library.FlowLayout
         android:layout_width="wrap_content"
@@ -105,7 +105,7 @@ drawable文件：
 
 按自己喜好设置就行~~
 ```
-####使用方法——动态添加
+#### 使用方法——动态添加
 ```
         FlowLayout flowLayout = new FlowLayout(this);
 
@@ -117,12 +117,12 @@ drawable文件：
 
         setContentView(flowLayout);
 ```
-####initData方法
+#### initData方法
 ```
 public void initData(List<String> list)
 public void initData(List<String> list, int margin, int drawable) 
 ```
-####添加点击事件
+#### 添加点击事件
 ```
  flowLayout.setOnTabClickListener(new FlowLayout.IOnTabClickListener() {
 
@@ -134,8 +134,8 @@ public void initData(List<String> list, int margin, int drawable)
         setContentView(flowLayout);
 ```
 
-####实现思路
-  #####构造方法
+#### 实现思路
+  ##### 构造方法
 ```
     public FlowLayout(Context context) {
         this(context, null);
@@ -149,14 +149,14 @@ public void initData(List<String> list, int margin, int drawable)
         super(context, attrs, defStyleAttr);
     }
 ```
-#####子view支持margin属性
+##### 子view支持margin属性
 ```
  @Override
     public LayoutParams generateLayoutParams(AttributeSet attrs) {
         return new MarginLayoutParams(getContext(), attrs);
     }
 ```
-####onMeasure方法
+#### onMeasure方法
 ```
  @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -217,7 +217,7 @@ public void initData(List<String> list, int margin, int drawable)
         setMeasuredDimension(widthMode == MeasureSpec.EXACTLY ? widthSize : width, heightMode == MeasureSpec.EXACTLY ? heightSize : height);
     }
 ```
-#####onLayout方法
+##### onLayout方法
 ```
  @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
@@ -228,7 +228,7 @@ public void initData(List<String> list, int margin, int drawable)
 
     }
 ```
-#####ViewBean方法
+##### ViewBean方法
 ```
 private class ViewBean {
         private int left;
@@ -269,7 +269,7 @@ private class ViewBean {
         }
     }
 ```
-#####动态填充数据实现
+##### 动态填充数据实现
 ```
  public void initData(List<String> list) {
         ViewGroup.MarginLayoutParams pa = new ViewGroup.MarginLayoutParams(ViewGroup.MarginLayoutParams.WRAP_CONTENT,
@@ -285,7 +285,7 @@ private class ViewBean {
         }
     }
 ```
-####添加点击事件
+#### 添加点击事件
 ```
 public interface IOnTabClickListener {
         void onTabClick(int position, TextView textView);
@@ -300,5 +300,5 @@ private void setOnclick(final int position, final TextView textView) {
         });
     }
 ```
-#####后记
+##### 后记
    比较难理解的部分应该就是onMeasure了。。当设置wrap的时候找到宽度最大的值。。并且设置每个view的坐标.
